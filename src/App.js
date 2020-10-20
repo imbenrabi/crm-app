@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import { observer } from 'mobx-react'
 import './App.css';
 
 function App() {
