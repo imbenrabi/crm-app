@@ -73,6 +73,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
+    "start:server": "env-cmd -f ./config/dev.env nodemon server/server.js",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
@@ -154,5 +155,9 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.6"
   }
 }

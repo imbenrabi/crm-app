@@ -29,7 +29,7 @@ class Server {
 
     initDatabase() {
         console.log('Connecting to database...');
-        require('./db/mongoose');
+        require('./db/sequelize');
     }
 
     initMiddlewares() {
