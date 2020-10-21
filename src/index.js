@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from 'mobx-react'
+import { Provider } from 'mobx-react';
+import { ClientStore as clientStore } from "./stores/ClientStore";
 
-const InventoryStore = new inventoryStore();
-const stores = { InventoryStore }
+const ClientStore = new clientStore();
+const stores = { ClientStore }
 
 ReactDOM.render(
   <React.StrictMode>

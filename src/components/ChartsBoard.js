@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BadgesBar(props) {
+function ChartsBoard(props) {
     return (
         <div>
 
@@ -8,4 +8,4 @@ function BadgesBar(props) {
     );
 }
 
-export default BadgesBar;
+export default ChartsBoard;

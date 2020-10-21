@@ -1,27 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import { observer } from 'mobx-react'
+import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 import './App.css';
+import { observer } from 'mobx-react';
+import NavBar from './components/NavBar';
+import Clients from './components/Clients';
+import Actions from './components/Actions';
+import Analytics from './components/Analytics';
 
-function App() {
+const App = observer((props) => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <Router>
+        <NavBar />
+        <Switch>
+          <Route path='/clients' exact render={() => <Clients />} />
+          <Route path='/analytics' exact render={() => <Analytics />} />
+          <Route path='/actions' exact render={() => <Actions />} />
+        </Switch>
+      </Router>
     </div>
   );
-}
+})
 
 export default App;
