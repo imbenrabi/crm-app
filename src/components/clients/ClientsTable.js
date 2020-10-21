@@ -13,7 +13,7 @@ const columns = [
 
 const ClientsTable = (props) => {
     return (
-        <div style={{ height: '90vh', width: '100%' }}>
+        <div style={{ height: '82vh', width: '100%' }}>
             <DataGrid rows={props.clients} columns={columns} pageSize={50} checkboxSelection />
         </div>
     );
