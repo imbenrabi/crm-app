@@ -2,11 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 import './App.css';
 import { inject, observer } from 'mobx-react';
-import { getClients } from './services'
 import NavBar from './components/NavBar';
-import Clients from './components/Clients';
-import Actions from './components/Actions';
-import Analytics from './components/Analytics';
+import Clients from './components/clients/Clients';
+import Actions from './components/actions/Actions';
+import Analytics from './components/analytics/Analytics';
 
 const App = inject('ClientStore')(observer((props) => {
   return (

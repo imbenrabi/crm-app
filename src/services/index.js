@@ -1,5 +1,3 @@
-import { getClients } from './http.service';
+import { HttpService } from './http.service';
 
-const services = { getClients }
-
-export default services;
+export const services = { httpService: new HttpService() };
