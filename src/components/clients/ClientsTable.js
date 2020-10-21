@@ -11,10 +11,15 @@ const columns = [
     { field: 'owner', headerName: 'Owner', width: 180 },
 ];
 
+const handleRowClick = (row) => {
+    // console.log(cell);
+    console.log(row.data.id);
+}
+
 const ClientsTable = (props) => {
     return (
         <div style={{ height: '82vh', width: '100%' }}>
-            <DataGrid rows={props.clients} columns={columns} pageSize={50} checkboxSelection />
+            <DataGrid rows={props.clients} columns={columns} pageSize={50} checkboxSelection={false} onRowClick={handleRowClick} />
         </div>
     );
 }
