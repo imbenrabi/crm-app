@@ -1,6 +1,7 @@
 import { observable, makeObservable } from 'mobx'
 
 export class Client {
+    id;
     name;
     surname;
     country;
@@ -10,6 +11,7 @@ export class Client {
     owner;
     constructor(client) {
         makeObservable(this, {
+            id: observable,
             name: observable,
             surname: observable,
             country: observable,
@@ -18,6 +20,7 @@ export class Client {
             sold: observable,
             owner: observable
         })
+        this.id = client._id;
         this.name = client.name;
         this.surname = client.surname;
         this.country = client.country;

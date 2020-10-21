@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 import './App.css';
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
+import { getClients } from './services'
 import NavBar from './components/NavBar';
 import Clients from './components/Clients';
 import Actions from './components/Actions';
 import Analytics from './components/Analytics';
 
-const App = observer((props) => {
+const App = inject('ClientStore')(observer((props) => {
   return (
     <div className="App">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
@@ -22,6 +23,6 @@ const App = observer((props) => {
       </Router>
     </div>
   );
-})
+}))
 
 export default App;
