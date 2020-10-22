@@ -19,7 +19,7 @@ const Clients = inject('ClientStore')(observer((props) => {
     return (
         <div>
             <ClientSearch />
-            <ClientsTable clients={ClientStore.clients} updateClient={ClientStore.editClient} openModal />
+            <ClientsTable clients={ClientStore.clients} updateClient={ClientStore.editClient} />
         </div>
     );
 }))

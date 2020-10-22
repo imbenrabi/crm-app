@@ -55,7 +55,6 @@ const ClientsTable = (props) => {
     const [open, setOpen] = React.useState(false);
     const [name, setName] = React.useState('');
     const [country, setCountry] = React.useState('');
-    const [owner, setOwner] = React.useState('');
 
     const handleRowClick = (row) => {
         setModalData(row.data)
@@ -70,11 +69,8 @@ const ClientsTable = (props) => {
     const handleCountryChange = (event) => {
         setCountry(event.target.value);
     };
-    const handleOwnerChange = (event) => {
-        setOwner(event.target.value);
-    };
     const handleUpdateClient = () => {
-        console.log(name, country, owner);
+        console.log(name, country);
         setOpen(false);
     }
 
@@ -87,7 +83,6 @@ const ClientsTable = (props) => {
             <form className={classes.root} noValidate autoComplete="off">
                 <TextField id="name" label="Name" value={name} onChange={handleNameChange} />
                 <TextField id="country" label="Country" value={country} onChange={handleCountryChange} />
-                <TextField id="owner" label="Owner" value={owner} onChange={handleOwnerChange} />
             </form>
             <div className={classes.root}>
                 <Button variant="contained" color="primary" onClick={handleUpdateClient}>Update</Button>
