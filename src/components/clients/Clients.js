@@ -4,11 +4,14 @@ import { services } from '../../services'
 import ClientSearch from './ClientSearch';
 import ClientsTable from './ClientsTable';
 
+
+
 const Clients = inject('ClientStore')(observer((props) => {
+    const ClientStore = props.ClientStore;
     useEffect(() => {
         const getCurrentClients = async () => {
             const clients = await services.httpService.getClients();
-            props.ClientStore.clients = clients
+            ClientStore.clients = clients
         }
         getCurrentClients()
     }, [])
@@ -16,7 +19,7 @@ const Clients = inject('ClientStore')(observer((props) => {
     return (
         <div>
             <ClientSearch />
-            <ClientsTable clients={props.ClientStore.clients} />
+            <ClientsTable clients={ClientStore.clients} updateClient={ClientStore.editClient} openModal />
         </div>
     );
 }))

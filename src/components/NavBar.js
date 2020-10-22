@@ -14,7 +14,7 @@ const useStyles = makeStyles({
 
 function NavBar(props) {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState('clients');
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -29,13 +29,13 @@ function NavBar(props) {
                 textColor="primary"
                 centered
             >
-                <Link style={{ textDecoration: 'none' }} value="clients" to='/clients'>
+                <Link style={{ textDecoration: 'none', color: 'black' }} value="clients" to='/clients'>
                     <Tab label="Clients" value="clients" onChange={handleChange}></Tab>
                 </Link>
-                <Link style={{ textDecoration: 'none' }} value="actions" to='/actions'>
+                <Link style={{ textDecoration: 'none', color: 'black' }} value="actions" to='/actions'>
                     <Tab label="Actions" value="actions" onChange={handleChange}></Tab>
                 </Link>
-                <Link style={{ textDecoration: 'none' }} value="analytics" to='/analytics'>
+                <Link style={{ textDecoration: 'none', color: 'black' }} value="analytics" to='/analytics'>
                     <Tab label="Analytics" value="analytics" onChange={handleChange}></Tab>
                 </Link>
             </Tabs>
