@@ -3,17 +3,17 @@
 // import { handleMongoResp } from "../services/mongoResp.service";
 const express = require('express');
 
-class UsersRouter {
+class ClientsRouter {
 
     constructor(services) {
-        this.prefix = 'users';
+        this.prefix = 'clients';
         this.services = services;
         this.express = express.Router();
         this.init();
     }
 
     init() {
-        console.log('Starting users router...');
+        console.log('Starting clients router...');
         this.express.route('/').get(async (req, res, next) => {
             try {
                 const users = await User.find({});
@@ -48,4 +48,4 @@ class UsersRouter {
 
 }
 
-module.exports = UsersRouter;
+module.exports = ClientsRouter;

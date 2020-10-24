@@ -1,5 +1,6 @@
-const UsersRouter = require('./users');
+const ClientsRouter = require('./clients');
+const ClientsRouter = require('./clients');
 
-const routers = [UsersRouter];
+const routers = [ClientsRouter];
 
 module.exports = routers;

@@ -1,7 +1,9 @@
 const Sequelize = require('sequelize');
 
-// const sequelize = new Sequelize('mysql://YOUR_USER:YOUR_PASSWORD@YOUR_HOST/YOUR_DB_NAME');
-const sequelize = new Sequelize(process.env.MYSQL_CONNECTION_URL);
+const sequelize = new Sequelize('crm_app', 'root', '1234', {
+    host: 'localhost',
+    dialect: 'mysql'
+});
 
 sequelize
     .authenticate()
@@ -11,3 +13,5 @@ sequelize
     .catch(err => {
         console.error('Unable to connect to the database:', err);
     })
+
+module.exports = sequelize;
