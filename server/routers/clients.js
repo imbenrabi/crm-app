@@ -24,7 +24,7 @@ class ClientsRouter {
                 return next(content);
             }
         });
-        this.express.route('/user').post(async (req, res, next) => {
+        this.express.route('/client').post(async (req, res, next) => {
             try {
                 let user = new User(req.body);
                 user = await user.save()
@@ -34,7 +34,7 @@ class ClientsRouter {
                 return next(content);
             }
         });
-        this.express.route('/users').delete(async (req, res, next) => {
+        this.express.route('/client').put(async (req, res, next) => {
             try {
                 console.log('deleting...');
                 res.send('deleted')
