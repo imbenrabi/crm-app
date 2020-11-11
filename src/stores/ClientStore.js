@@ -1,6 +1,6 @@
 import { observable, action, computed, makeAutoObservable, makeObservable } from 'mobx'
 import { Client } from './Client'
-import { services } from '../../services';
+import { services } from '../services';
 
 
 
