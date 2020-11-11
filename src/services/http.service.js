@@ -1,10 +1,14 @@
-
+import axios from 'axios';
 
 export class HttpService {
     async getClients() {
-        let data = require('../data.json')
-        const clients = data.map(({ _id: id, ...rest }) => ({ id, ...rest }));
-        return clients
+        try {
+            const resp = await axios.get('/clients');
+            const clients = resp.data.data;
+            return clients
+        } catch (error) {
+            throw error;
+        }
     }
     async updateClient() {
         console.log('Client updated');

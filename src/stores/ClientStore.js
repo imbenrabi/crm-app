@@ -6,7 +6,7 @@ import { services } from '../services';
 
 export class ClientStore {
     clients = [];
-    constructor(clients) {
+    constructor() {
         makeObservable(this, {
             clients: observable,
             addClient: action,
@@ -14,7 +14,6 @@ export class ClientStore {
             getClients: action,
             numClients: computed
         })
-        this.clients = clients
     }
     getClients = async () => {
         const clientsList = await services.httpService.getClients();

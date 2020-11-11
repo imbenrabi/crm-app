@@ -13,16 +13,11 @@ const getOwners = (clients) => {
 const Actions = inject('ClientStore')(observer((props) => {
     const ClientStore = props.ClientStore;
     useEffect(() => {
-        // const getCurrentClients = async () => {
-        //     const clients = await services.httpService.getClients();
-        //     ClientStore.clients = clients
-        // }
-        // getCurrentClients()
         (async () => {
+            console.log('actions useEffect');
             await ClientStore.getClients();
         })();
     }, [])
-
     return (
         <div>
             <h3>UPDATE</h3>

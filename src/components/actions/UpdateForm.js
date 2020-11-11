@@ -35,6 +35,7 @@ function UpdateForm(props) {
         setEmail(event.target.value);
     };
     const renderMenuItems = () => {
+        console.log(props.owners);
         return props.owners.map(owner => <MenuItem value={owner}>{`${owner}`}</MenuItem>)
     }
     return (
