@@ -25,10 +25,12 @@ class QueryService {
                 return console.log('Failed to add client. Check owner / country / email type...');
             }
 
-            sequelize.query(`
+            const insertedClient = await sequelize.query(`
            INSERT INTO client(id, name, email, sold, first_contact, email_type_id, country_id, owner_id)
-            VALUES (${null}, "${client.name}", "${client.email}", ${sold}, "${date}", ${emailTypeId}, ${countryId}, ${ownerId})`)
+            VALUES (${null}, "${client.name}", "${client.email}", ${sold}, "${date}", ${emailTypeId}, ${countryId}, ${ownerId})`,
+                { type: sequelize.QueryTypes.INSERT });
 
+            return insertedClient;
         } catch (error) {
             throw error
         }

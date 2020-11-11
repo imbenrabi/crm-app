@@ -16,9 +16,9 @@ class ClientsRouter {
         console.log('Starting clients router...');
         this.express.route('/').get(async (req, res, next) => {
             try {
-                const users = await User.find({});
-                const response = await handleMongoResp(users);
-                return next(response);
+                console.log('Fetching all clients...');
+                const clients = await this.services.querying.getClients();
+                return next({ status: 200, data: clients });
             } catch (e) {
                 let content = this.services.parsing.parseError(e);
                 return next(content);
@@ -26,9 +26,10 @@ class ClientsRouter {
         });
         this.express.route('/client').post(async (req, res, next) => {
             try {
-                let user = new User(req.body);
-                user = await user.save()
-                return next(handleMongoResp(user));
+                console.log('Adding a new client...');
+                let client = req.body;
+                const newClient = await this.services.querying.addClient(client);
+                return next({ status: 201, data: newClient });
             } catch (e) {
                 let content = this.services.parsing.parseError(e);
                 return next(content);
