@@ -4,7 +4,10 @@ const sequelize = require('../db/sequelize');
 class QueryService {
     async getClients() {
         try {
-            const clients = await sequelize.query("SELECT * FROM `client`", { type: QueryTypes.SELECT });
+            const clients = await sequelize.query(`SELECT client.id, client.sold, client.name, client.email, client.first_contact as firstContact, country.name countryName, owner.name ownerName, email_type.type emailType 
+            FROM client JOIN country JOIN email_type JOIN owner ON
+            client.country_id = country.id AND client.email_type_id = email_type.id AND client.owner_id = owner.id`,
+                { type: QueryTypes.SELECT });
             return clients;
         } catch (error) {
             throw error

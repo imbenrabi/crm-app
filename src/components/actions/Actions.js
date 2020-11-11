@@ -6,7 +6,7 @@ import AddClientForm from './AddClientForm';
 
 const getOwners = (clients) => {
     const owners = {}
-    clients.forEach(c => !owners[c.owner] ? owners[c.owner] = true : null);
+    clients.forEach(c => !owners[c.ownerName] ? owners[c.ownerName] = true : null);
     return Object.keys(owners)
 }
 
@@ -14,7 +14,6 @@ const Actions = inject('ClientStore')(observer((props) => {
     const ClientStore = props.ClientStore;
     useEffect(() => {
         (async () => {
-            console.log('actions useEffect');
             await ClientStore.getClients();
         })();
     }, [])

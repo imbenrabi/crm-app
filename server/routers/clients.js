@@ -20,6 +20,7 @@ class ClientsRouter {
                 const clients = await this.services.querying.getClients();
                 return next({ status: 200, data: clients });
             } catch (e) {
+                console.log(e);
                 let content = this.services.parsing.parseError(e);
                 return next(content);
             }
@@ -31,6 +32,7 @@ class ClientsRouter {
                 const newClient = await this.services.querying.addClient(client);
                 return next({ status: 201, data: newClient });
             } catch (e) {
+                console.log(e);
                 let content = this.services.parsing.parseError(e);
                 return next(content);
             }

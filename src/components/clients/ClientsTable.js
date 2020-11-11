@@ -8,12 +8,12 @@ import TextField from '@material-ui/core/TextField';
 
 const columns = [
     { field: 'name', headerName: 'Name', width: 180 },
-    { field: 'country', headerName: 'Country', width: 130 },
+    { field: 'countryName', headerName: 'Country', width: 130 },
     { field: 'email', headerName: 'Email', width: 250 },
     { field: 'firstContact', headerName: 'First Contact', type: 'date', width: 250 },
     { field: 'emailType', headerName: 'Email Type', width: 130 },
     { field: 'sold', headerName: 'Sold', width: 70 },
-    { field: 'owner', headerName: 'Owner', width: 180 },
+    { field: 'ownerName', headerName: 'Owner', width: 180 },
 ];
 
 function rand() {
