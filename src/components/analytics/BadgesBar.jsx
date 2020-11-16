@@ -7,11 +7,7 @@ import HottestCountry from './badges/HottestCountry';
 
 const BadgesBar = inject('ClientStore')(observer((props) => {
     const ClientStore = props.ClientStore;
-    useEffect(() => {
-        (async () => {
-            await ClientStore.getClients();
-        })();
-    }, [])
+
     return (
         <div id="badges-bar">
             <NewClients newClients={ClientStore.newClients} />
