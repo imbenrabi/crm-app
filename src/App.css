@@ -3,3 +3,28 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+#badges-bar {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.badge-box {
+  flex: 1;
+}
+
+.badge-box div {
+  display: inline;
+  text-align: center;
+  padding: 15px;
+  padding-bottom: 5px;
+  margin: 5px;  
+  border-radius: 5px 20px 5px;
+  background: #f50057;
+}
+
+.badge-icon {
+  color: white
+}

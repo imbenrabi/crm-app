@@ -1,12 +1,16 @@
-import { observer } from 'mobx-react';
 import React from 'react';
+import { inject, observer } from 'mobx-react';
+import BadgesBar from './BadgesBar';
+import ChartsBoard from './ChartsBoard';
 
-const Analytics = observer((props) => {
+
+const Analytics = (props) => {
     return (
-        <div>analytics
-
+        <div className="analytics-container">
+            <BadgesBar />
+            <ChartsBoard />
         </div>
     );
-})
+}
 
 export default Analytics;
