@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { inject, observer } from 'mobx-react';
-import { services } from '../../services';
 import UpdateForm from './UpdateForm';
 import AddClientForm from './AddClientForm';
 
@@ -16,7 +15,7 @@ const Actions = inject('ClientStore')(observer((props) => {
         (async () => {
             await ClientStore.getClients();
         })();
-    }, [])
+    }, [ClientStore])
     return (
         <div>
             <h3>UPDATE</h3>

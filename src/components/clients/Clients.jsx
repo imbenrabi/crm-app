@@ -9,7 +9,7 @@ const Clients = inject('ClientStore')(observer((props) => {
         (async () => {
             await ClientStore.getClients();
         })();
-    }, [])
+    }, [ClientStore])
 
     return (
         <div>

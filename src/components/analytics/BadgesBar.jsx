@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { inject, observer } from 'mobx-react';
 import EmailsSent from './badges/EmailsSent';
 import NewClients from './badges/NewClients';

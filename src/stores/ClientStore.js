@@ -1,4 +1,4 @@
-import { observable, action, computed, makeAutoObservable, makeObservable } from 'mobx'
+import { observable, action, computed, makeObservable } from 'mobx'
 import { Client } from './Client'
 import { services } from '../services';
 
@@ -16,7 +16,11 @@ export class ClientStore {
             newClients: computed,
             emailsSent: computed,
             outstandingClients: computed,
-            hottestCountry: computed
+            hottestCountry: computed,
+            salesPerSalesperson: computed,
+            salesCountryDist: computed,
+            contactsPerDate: computed,
+            salesPerEmail: computed
         })
 
     }
@@ -46,11 +50,57 @@ export class ClientStore {
     get hottestCountry() {
         const countryRanks = {};
         let topCountry = { country: '', count: 0 };
-        this.clients.forEach(client => {
+        [...this.clients].forEach(client => {
             countryRanks[client.countryName] ? countryRanks[client.countryName]++ : countryRanks[client.countryName] = 1
         })
-        Object.keys(countryRanks).forEach(country => countryRanks[country] > topCountry.count ? topCountry = { country, count: countryRanks[country] } : null)
+        Object.keys(countryRanks).forEach(country => countryRanks[country] > topCountry.count ? topCountry = { country, count: countryRanks[country] } : null);
         return topCountry.country
+    }
+    get salesPerSalesperson() {
+        let aggregation = {};
+        [...this.clients].forEach(client => {
+            aggregation[client.ownerName] ? aggregation[client.ownerName] += client.sold : aggregation[client.ownerName] = client.sold;
+        })
+        const salesByName = [];
+        Object.keys(aggregation).forEach((owner) => {
+            salesByName.push({ name: owner.split(' ')[0], sales: aggregation[owner] })
+        });
+        return salesByName;
+    }
+    get salesCountryDist() {
+        let aggregation = {};
+        [...this.clients].forEach(client => {
+            aggregation[client.countryName] ? aggregation[client.countryName] += client.sold : aggregation[client.countryName] = client.sold;
+        })
+        const salesByCountry = [];
+        Object.keys(aggregation).forEach((country) => {
+            salesByCountry.push({ country, sales: aggregation[country] })
+        });
+        return salesByCountry;
+    }
+    get contactsPerDate() {
+        let aggregation = {};
+        [...this.clients].forEach(client => {
+            aggregation[client.firstContact.slice(0, -3)] ? aggregation[client.firstContact.slice(0, -3)]++ : aggregation[client.firstContact.slice(0, -3)] = 1;
+        })
+        const contactsPerDate = []
+        Object.keys(aggregation).forEach((date) => {
+            contactsPerDate.push({ date, count: aggregation[date] })
+        });
+        return contactsPerDate;
+    }
+    get salesPerEmail() {
+        let aggregation = {};
+        [...this.clients].forEach(client => {
+            if (client.sold === 1) {
+                aggregation[client.emailType] ? aggregation[client.emailType]++ : aggregation[client.emailType] = 1;
+            }
+        })
+        const salesPerEmail = [];
+        Object.keys(aggregation).forEach((type) => {
+            salesPerEmail.push({ type, count: aggregation[type] })
+        });
+        return salesPerEmail;
     }
 }
 

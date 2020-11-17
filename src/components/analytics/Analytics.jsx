@@ -11,11 +11,12 @@ const Analytics = inject('ClientStore')(observer((props) => {
         (async () => {
             await ClientStore.getClients();
         })();
-    }, [])
+    }, [ClientStore])
 
     return (
         <div className="analytics-container">
             <BadgesBar />
+            <br />
             <ChartsBoard />
         </div>
     );

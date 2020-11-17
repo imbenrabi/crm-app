@@ -28,3 +28,9 @@
 .badge-icon {
   color: white
 }
+
+#charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
