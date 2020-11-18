@@ -14,11 +14,18 @@ class ClientsRouter {
 
     init() {
         console.log('Starting clients router...');
-        this.express.route('/').get(async (req, res, next) => {
+        this.express.route('/:filter?/:text?').get(async (req, res, next) => {
             try {
-                console.log('Fetching all clients...');
-                const clients = await this.services.querying.getClients();
-                return next({ status: 200, data: clients });
+                console.log(req.query);
+                if (req.query.filter && req.query.text) {
+                    console.log(`Searching... column: ${req.query.filter}, text: ${req.query.text}`);
+                    const searchResults = await this.services.querying.searchClients(req.query.filter, req.query.text);
+                    return next({ status: 200, data: searchResults });
+                } else {
+                    console.log('Fetching all clients...');
+                    const clients = await this.services.querying.getAllClients();
+                    return next({ status: 200, data: clients });
+                }
             } catch (e) {
                 console.log(e);
                 let content = this.services.parsing.parseError(e);

@@ -2,7 +2,7 @@ const { QueryTypes } = require('sequelize');
 const sequelize = require('../db/sequelize');
 
 class QueryService {
-    async getClients() {
+    async getAllClients() {
         try {
             const clients = await sequelize.query(`SELECT client.id, client.sold, client.name, client.email, client.first_contact as firstContact, country.name countryName, owner.name ownerName, email_type.type emailType 
             FROM client JOIN country JOIN email_type JOIN owner ON
@@ -11,6 +11,18 @@ class QueryService {
             return clients;
         } catch (error) {
             throw error
+        }
+    }
+    async searchClients(column, text) {
+        try {
+            const clients = await sequelize.query(`SELECT client.id, client.sold, client.name, client.email, client.first_contact as firstContact, country.name countryName, owner.name ownerName, email_type.type emailType 
+            FROM client JOIN country JOIN email_type JOIN owner ON
+            client.country_id = country.id AND client.email_type_id = email_type.id AND client.owner_id = owner.id
+            WHERE ${column} LIKE '%${text}%'`,
+                { type: QueryTypes.SELECT });
+            return clients;
+        } catch (error) {
+            throw error;
         }
     }
     async addClient(client) {

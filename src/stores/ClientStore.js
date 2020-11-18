@@ -24,9 +24,14 @@ export class ClientStore {
         })
 
     }
-    getClients = async () => {
-        const clientsList = await services.httpService.getClients();
-        this.clients = clientsList;
+    getClients = async (filter = undefined, text = undefined) => {
+        if (filter && text) {
+            const clientsList = await services.httpService.searchClients(filter, text);
+            this.clients = clientsList
+        } else {
+            const clientsList = await services.httpService.getClients();
+            this.clients = clientsList;
+        }
     }
     addClient = (client) => {
         this.clients.push(new Client(client));
