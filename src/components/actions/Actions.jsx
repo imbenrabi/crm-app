@@ -13,7 +13,7 @@ const Actions = inject('ClientStore')(observer((props) => {
     const ClientStore = props.ClientStore;
     useEffect(() => {
         (async () => {
-            await ClientStore.getClients();
+            await ClientStore.loadClients();
         })();
     }, [ClientStore])
     return (

@@ -9,7 +9,7 @@ const Analytics = inject('ClientStore')(observer((props) => {
 
     useEffect(() => {
         (async () => {
-            await ClientStore.getClients();
+            await ClientStore.loadClients();
         })();
     }, [ClientStore])
 

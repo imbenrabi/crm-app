@@ -10,8 +10,7 @@ const Clients = inject('ClientStore')(observer((props) => {
 
     useEffect(() => {
         (async () => {
-            await ClientStore.getClients(filter, text);
-            console.log(ClientStore.clients);
+            await ClientStore.loadClients(filter, text);
         })();
     }, [ClientStore, text]);
 

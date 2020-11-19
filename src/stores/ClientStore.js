@@ -11,7 +11,7 @@ export class ClientStore {
             clients: observable,
             addClient: action,
             editClient: action,
-            getClients: action,
+            loadClients: action,
             numClients: computed,
             newClients: computed,
             emailsSent: computed,
@@ -24,7 +24,7 @@ export class ClientStore {
         })
 
     }
-    getClients = async (filter = undefined, text = undefined) => {
+    loadClients = async (filter = undefined, text = undefined) => {
         if (filter && text) {
             const clientsList = await services.httpService.searchClients(filter, text);
             this.clients = clientsList
