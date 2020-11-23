@@ -25,6 +25,13 @@ UI by [Material-UI](https://material-ui.com/).
 - The page will reload if you make edits.<br />
 - You will also see any lint errors in the console.
 
+## App screenshots
+<h1 align="center">
+    <img src="./screenshots/analytics.png" width="250"/>
+    <img src="./screenshots/clients.png" width="250"/>
+    <img src="./screenshots/actions.png" width="250"/>
+</h1>
+
 ## Roadmap
 - Completing Add Client and Update Client functionality.
 - Toggle dark mode button.
