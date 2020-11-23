@@ -1,4 +1,4 @@
-# Personal Expense Manager
+# CRM Web Application
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app),
 adding on to it express-MySQL server.
 
@@ -27,9 +27,9 @@ UI by [Material-UI](https://material-ui.com/).
 
 ## App screenshots
 <h1 align="center">
-    <img src="./screenshots/analytics.png" width="250"/>
-    <img src="./screenshots/clients.png" width="250"/>
-    <img src="./screenshots/actions.png" width="250"/>
+    <img src="./screenshots/analytics.png" width="500"/>
+    <img src="./screenshots/clients.png" width="500"/>
+    <img src="./screenshots/actions.png" width="500"/>
 </h1>
 
 ## Roadmap
