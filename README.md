@@ -1,11 +1,11 @@
 # CRM Web Application
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app),
-adding on to it express-MySQL server.
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app),
+- adding on to it express-MySQL server.
 
 ## General description
-CRM web application.
-Node.js server serving React.Js app. 
-UI by [Material-UI](https://material-ui.com/).
+- CRM web application.
+- Node.js server serving React.Js app. 
+- UI by [Material-UI](https://material-ui.com/).
 
 ## Mock data.
 - Look at data.json.
