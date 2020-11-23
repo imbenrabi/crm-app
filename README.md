@@ -27,9 +27,9 @@ UI by [Material-UI](https://material-ui.com/).
 
 ## App screenshots
 <h1 align="center">
-    <img src="./screenshots/analytics.png" width="500"/>
-    <img src="./screenshots/clients.png" width="500"/>
-    <img src="./screenshots/actions.png" width="500"/>
+    <img src="./screenshots/analytics.png" width="756"/>
+    <img src="./screenshots/clients.png" width="756"/>
+    <img src="./screenshots/actions.png" width="756"/>
 </h1>
 
 ## Roadmap
