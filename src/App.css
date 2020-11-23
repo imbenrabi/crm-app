@@ -34,3 +34,14 @@
   flex-wrap: wrap;
   flex-grow: 1;
 }
+
+#actions-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+#sale-button {
+  margin-top: 3.4em;
+}

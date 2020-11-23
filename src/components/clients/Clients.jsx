@@ -12,7 +12,7 @@ const Clients = inject('ClientStore')(observer((props) => {
         (async () => {
             await ClientStore.loadClients(filter, text);
         })();
-    }, [ClientStore, text]);
+    }, [ClientStore, text, filter]);
 
     const search = async (text, filter) => {
         setFilter(filter);

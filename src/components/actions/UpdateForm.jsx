@@ -86,7 +86,7 @@ function UpdateForm(props) {
                 </div>
             </FormControl>
             <div className={classes.root}>
-                <Button variant="contained" color="secondary">DECLARE SALE !</Button>
+                <Button id="sale-button" variant="contained" color="secondary">DECLARE SALE !</Button>
             </div>
         </div>
     );

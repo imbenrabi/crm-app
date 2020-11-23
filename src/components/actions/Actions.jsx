@@ -17,12 +17,15 @@ const Actions = inject('ClientStore')(observer((props) => {
         })();
     }, [ClientStore])
     return (
-        <div>
-            <h3>UPDATE</h3>
-            <UpdateForm owners={getOwners(ClientStore.clients)} clients={ClientStore.clients} />
-            <hr />
-            <h3>ADD CLIENT</h3>
-            <AddClientForm />
+        <div id="actions-container">
+            <div>
+                <h3>UPDATE</h3>
+                <UpdateForm owners={getOwners(ClientStore.clients)} clients={ClientStore.clients} />
+            </div>
+            <div>
+                <h3>ADD CLIENT</h3>
+                <AddClientForm />
+            </div>
         </div>
     );
 }))
