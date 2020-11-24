@@ -1,6 +1,5 @@
 # CRM Web Application
-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app),
-- adding on to it express-MySQL server.
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), adding on to it express-MySQL server.
 
 ## General description
 - CRM web application.
@@ -8,7 +7,7 @@
 - UI by [Material-UI](https://material-ui.com/).
 
 ## Mock data.
-- Look at data.json.
+- Inspect at data.json.
 - Set up your MySQL DB using the files in the server/setup directory.
 
 ## Production deployment / production-like env.
