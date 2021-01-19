@@ -16,7 +16,7 @@ const App = inject('ClientStore')(observer(() => {
         <NavBar />
         <Switch>
           <Route path='/clients' exact render={() => <Clients />} />
-          <Route path='/analytics' exact render={() => <Analytics />} />
+          <Route path='/' exact render={() => <Analytics />} />
           <Route path='/actions' exact render={() => <Actions />} />
         </Switch>
       </Router>

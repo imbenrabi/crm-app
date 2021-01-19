@@ -35,7 +35,7 @@ function NavBar(props) {
                 <Link style={{ textDecoration: 'none', color: 'black' }} value="actions" to='/actions' onClick={handleChange}>
                     <Tab label="Actions" value="actions" onChange={handleChange}></Tab>
                 </Link>
-                <Link style={{ textDecoration: 'none', color: 'black' }} value="analytics" to='/analytics' onClick={handleChange}>
+                <Link style={{ textDecoration: 'none', color: 'black' }} value="analytics" to='/' onClick={handleChange}>
                     <Tab label="Analytics" value="analytics" onChange={handleChange}></Tab>
                 </Link>
             </Tabs>
