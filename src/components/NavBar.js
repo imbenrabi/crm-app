@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
+import { Link} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+// import Link from '@material-ui/core/Link';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
@@ -28,13 +29,13 @@ function NavBar(props) {
                 textColor="primary"
                 centered
             >
-                <Link style={{ textDecoration: 'none', color: 'black' }} value="clients" to='/clients'>
+                <Link style={{ textDecoration: 'none', color: 'black' }} value="clients" to='/clients' onClick={handleChange}>
                     <Tab label="Clients" value="clients" onChange={handleChange}></Tab>
                 </Link>
-                <Link style={{ textDecoration: 'none', color: 'black' }} value="actions" to='/actions'>
+                <Link style={{ textDecoration: 'none', color: 'black' }} value="actions" to='/actions' onClick={handleChange}>
                     <Tab label="Actions" value="actions" onChange={handleChange}></Tab>
                 </Link>
-                <Link style={{ textDecoration: 'none', color: 'black' }} value="analytics" to='/analytics'>
+                <Link style={{ textDecoration: 'none', color: 'black' }} value="analytics" to='/analytics' onClick={handleChange}>
                     <Tab label="Analytics" value="analytics" onChange={handleChange}></Tab>
                 </Link>
             </Tabs>

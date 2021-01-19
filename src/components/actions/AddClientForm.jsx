@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function AddClientForm(props) {
+function AddClientForm() {
     const classes = useStyles();
 
     return (

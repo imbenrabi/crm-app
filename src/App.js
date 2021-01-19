@@ -7,7 +7,7 @@ import Clients from './components/clients/Clients';
 import Actions from './components/actions/Actions';
 import Analytics from './components/analytics/Analytics';
 
-const App = inject('ClientStore')(observer((props) => {
+const App = inject('ClientStore')(observer(() => {
   return (
     <div className="App">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
